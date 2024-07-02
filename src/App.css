@@ -1,0 +1,37 @@
+/* App.css */
+.todo-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.todo-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 500ms, transform 500ms;
+}
+
+.todo-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.todo-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 500ms, transform 500ms;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 1024px) {
+    .form-container {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+    }
+}
