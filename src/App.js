@@ -3,7 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaPlus, FaTrash, FaEdit, FaCheck, FaCheckCircle, FaRegCircle } from 'react-icons/fa';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import './App.css'; // Import CSS for transitions
+import './App.css';
 
 function App() {
   const [value, setValue] = useState('');
@@ -65,7 +65,7 @@ function App() {
     toast.success('Trạng thái công việc đã được cập nhật');
     setTimeout(() => {
       setTodos(prev => prev.filter(item => item.id !== id));
-    }, 500); // Delay to allow transition
+    }, 500);
   };
 
   return (
