@@ -93,7 +93,7 @@ function App() {
               <FaPlus /> Add
             </button>
           </div>
-          <h3 className="font-bold text-xl my-4 text-blue-700">Content:</h3>
+          <h3 className="font-bold text-xl my-4 text-blue-700">Danh sách công việc:</h3>
           <TransitionGroup component="ul" className="space-y-3">
             {todos.map(item => (
               <CSSTransition
