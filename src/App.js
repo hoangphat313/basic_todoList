@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaPlus, FaTrash, FaEdit, FaCheck, FaCheckCircle, FaRegCircle } from 'react-icons/fa';
@@ -70,30 +70,30 @@ function App() {
 
   return (
     <>
-      <div className="flex justify-center items-center mt-8">
+      <div className="title-container flex justify-center items-center mt-4 mb-1">
         <h2 className="font-bold text-3xl text-blue-700 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
           My TodoList
         </h2>
       </div>
-      <div className="flex flex-col gap-6 justify-center items-center bg-gray-100 p-6 min-h-screen">
+      <div className="flex-container flex flex-col gap-4 justify-center items-center bg-gray-100 p-4 min-h-screen">
         <div className="w-full max-w-md bg-white shadow-md rounded-md p-4">
-          <div className="form-container">
+          <div className="form-container input-form-container mb-4">
             <input
               type="text"
-              className="outline-none border border-blue-600 px-4 py-2 w-full rounded-md shadow-sm"
+              className="outline-none border border-blue-600 px-4 py-2 w-full rounded-md shadow-sm focus:ring-2 focus:ring-blue-400"
               value={value}
               onChange={e => setValue(e.target.value)}
               placeholder="Nhập công việc..."
             />
             <button
               type="button"
-              className="outline-none px-4 py-2 bg-blue-500 rounded-md text-white flex items-center gap-2 hover:bg-blue-600 transition duration-300"
+              className="outline-none px-4 py-2 bg-blue-500 rounded-md text-white flex items-center gap-2 hover:bg-blue-600 transition duration-300 transform hover:scale-105"
               onClick={handleAdd}
             >
               <FaPlus /> Add
             </button>
           </div>
-          <h3 className="font-bold text-xl my-4 text-blue-700">Danh sách công việc:</h3>
+          <h3 className="font-bold text-xl mb-2 text-blue-700">Danh sách công việc:</h3>
           <TransitionGroup component="ul" className="space-y-3">
             {todos.map(item => (
               <CSSTransition
@@ -112,7 +112,7 @@ function App() {
                     {editing === item.id ? (
                       <input
                         type="text"
-                        className="outline-none border border-blue-600 px-4 py-2 w-full rounded-md shadow-sm"
+                        className="outline-none border border-blue-600 px-4 py-2 w-full rounded-md shadow-sm focus:ring-2 focus:ring-blue-400"
                         value={editingValue}
                         onChange={e => setEditingValue(e.target.value)}
                       />
@@ -123,21 +123,21 @@ function App() {
                   <div className="flex items-center gap-2">
                     {editing === item.id ? (
                       <button
-                        className="outline-none px-2 py-1 bg-green-500 rounded-md text-white flex items-center gap-1 hover:bg-green-600 transition duration-300"
+                        className="outline-none px-2 py-1 bg-green-500 rounded-md text-white flex items-center gap-1 hover:bg-green-600 transition duration-300 transform hover:scale-105"
                         onClick={() => handleSaveEdit(item.id)}
                       >
                         <FaCheck /> Save
                       </button>
                     ) : (
                       <button
-                        className="outline-none px-2 py-1 bg-yellow-500 rounded-md text-white flex items-center gap-1 hover:bg-yellow-600 transition duration-300"
+                        className="outline-none px-2 py-1 bg-yellow-500 rounded-md text-white flex items-center gap-1 hover:bg-yellow-600 transition duration-300 transform hover:scale-105"
                         onClick={() => handleEditJob(item.id)}
                       >
                         <FaEdit /> Edit
                       </button>
                     )}
                     <button
-                      className="outline-none px-2 py-1 bg-red-500 rounded-md text-white flex items-center gap-1 hover:bg-red-600 transition duration-300"
+                      className="outline-none px-2 py-1 bg-red-500 rounded-md text-white flex items-center gap-1 hover:bg-red-600 transition duration-300 transform hover:scale-105"
                       onClick={() => handleDeleteJob(item.id)}
                     >
                       <FaTrash /> Delete

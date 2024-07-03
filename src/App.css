@@ -21,16 +21,65 @@
     transition: opacity 500ms, transform 500ms;
 }
 
+/* Highlight new todos */
+.todo-enter-done {
+    animation: highlight 1s ease;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #e0ffe0;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Flex container for main layout adjustments */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Form container for input and button */
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Adjustments for closer spacing */
+.title-container {
+    margin-bottom: 1rem;
+}
+
+.input-form-container {
+    margin-bottom: 1rem;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .flex-container {
-        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .form-container {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .todo-list {
+        width: 100%;
     }
 }
 
 @media (min-width: 1024px) {
     .form-container {
-        display: grid;
         grid-template-columns: 1fr auto;
         gap: 1rem;
     }
